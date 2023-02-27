@@ -33,14 +33,9 @@ from engine_for_finetuning import train_one_epoch, evaluate
 from utils.utils import NativeScalerWithGradNormCount as NativeScaler
 import utils.utils as utils
 from scipy import interpolate
-import modeling_finetune
-import modeling_pretrain_pvt
-import modeling_pretrain_abinet
-from models import ladder_vit
-from models import class_aware_encoder, class_aware_encoder_tiny, resnet_transformer
+import modeling_pretrain_vit
 from loss import *
 from models.model_builder import RecModel, CTCRecModel, AttnRecModel
-from models.region_vit import *
 from models.encoder import create_encoder
 from utils.logging import Logger
 

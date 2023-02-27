@@ -574,14 +574,7 @@ def save_model(args, epoch, model, model_without_ddp, optimizer, loss_scaler, mo
 
 
 def custom_load_model(resume_path):
-    try:
-        import moxing as mox
-        mox.file.shift('os', 'mox')
-        local_path = '/cache/' + os.path.basename(resume_path)
-        mox.file.copy(resume_path, local_path)
-        checkpoint = torch.load(local_path, map_location='cpu')
-    except:
-        checkpoint = torch.load(resume_path, map_location='cpu')
+    checkpoint = torch.load(resume_path, map_location='cpu')
     return checkpoint
 
 
