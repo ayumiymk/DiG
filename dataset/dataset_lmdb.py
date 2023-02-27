@@ -214,4 +214,6 @@ class ImageLmdb(Dataset):
         aug_img = self.aug_transformer(aug_img)
       return aug_img, label, label_len
     else:
+      assert self.transform is not None
+      img = self.transform(img)
       return img, label, label_len

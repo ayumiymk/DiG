@@ -144,5 +144,5 @@ class RegularTransform(object):
                 std=torch.tensor(std))
         ])
 
-    def __call__(self, image, num_text_tokens):
+    def __call__(self, image):
         return self.transforms(image)
